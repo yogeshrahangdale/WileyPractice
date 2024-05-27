@@ -1,0 +1,19 @@
+1. Find the problem with ACID, and potential solutions without going to No Sql?
+
+ACID properties can lead to scalability, latency, and complexity issues in relational databases, especially in distributed systems. Potential solutions within the relational database realm include:
+
+Sharding: Distribute the database across multiple servers to balance the load.
+Optimizations: Use indexing, query optimization, and in-memory databases to reduce latency.
+Distributed Protocols: Implement Two-Phase Commit (2PC) or Paxos for maintaining consistency across nodes.
+Resource Management: Upgrade hardware and tune database settings to optimize resource usage.
+Eventual Consistency: Apply eventual consistency models and quorum-based replication for better availability.
+These approaches can help mitigate ACID-related problems without resorting to NoSQL databases.
+
+2. Explain how ACID Properties are implemented in Distributed Database Transactions?
+
+In distributed databases, ACID properties are implemented as follows:
+
+Atomicity: Achieved using protocols like Two-Phase Commit (2PC), which ensures all parts of a transaction either commit or roll back together.
+Consistency: Maintained through consistency protocols such as quorum-based voting and application-level constraints.
+Isolation: Ensured with techniques like Multi-Version Concurrency Control (MVCC) and locking mechanisms to prevent transactions from interfering with each other.
+Durability: Implemented using Write-Ahead Logging (WAL) and data replication, ensuring data is not lost after a transaction commits, even if a failure occurs.
